@@ -1,0 +1,1944 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style:none;
+}
+html{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    /*background: #f1f1f1;*/
+}
+body{
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    position: relative;
+    min-width: 1330px;
+    overflow: auto;
+    background: white;
+}
+body::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+body::-webkit-scrollbar-button    {
+    background: #fff;
+}
+body::-webkit-scrollbar-track     {
+    background: #fff;
+}
+body::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+body::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+body::-webkit-scrollbar-corner {
+    display: none;
+}
+body::-webkit-scrollbar-resizer  {
+    background:white;
+}
+/*模板调用区域--------------------------------------------------------------------lgy*/
+.userModels{
+    width:100%;
+    box-sizing: border-box;
+    padding:25px 20px;
+}
+.userModels>select{
+    width:110px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font:14px "Microsoft Yahei";
+    color: #666666;
+    height: 30px;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/downSelect.png") no-repeat scroll 95% center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 15px;
+    padding-left: 10px;
+}
+#choose-example{
+    width:150px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font:14px "Microsoft Yahei";
+    color: #666666;
+    height: 30px;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/downSelect.png") no-repeat scroll 95% center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 15px;
+    padding-left: 10px;
+}
+.userModels>span{
+    color: #333333;
+    font:bold 14px "Microsoft Yahei";
+    vertical-align: middle;
+}
+
+.userModels>button{
+    color: #02cb90;
+    font:14px "Microsoft Yahei";
+    width: 110px;
+    margin-left:40px;
+    vertical-align: middle;
+    cursor: pointer;
+    border:1px solid #02cb90;
+    background:white;
+    border-radius: 4px ;
+    height: 30px;
+}
+.userModels>button:hover{
+    background: #02cb90;
+    border: none;
+    color: white;
+}
+#examination{
+    background: #02cb90;
+    border: none;
+}
+#examination>span{
+    color: white;
+    font:bold 14px "Microsoft Yahei";
+    vertical-align: middle;
+}
+#examination>img{
+    vertical-align: middle;
+    height: 16px;
+}
+
+.userModels>.userModels-sedExamination{
+    background: grey;
+    color: white;
+    border: none;
+    cursor: auto;
+}
+.userModels>.userModels-sedExamination:hover{
+    background: grey;
+}
+
+/*病人基本信息区域  lgy--------------------------------------------------------*/
+.patientInf{
+    width: 100%;
+    box-shadow: 0 0 10px #F3F3F3;
+}
+.patientInf-head{
+    padding: 10px 10px;
+    border-bottom: 1px solid #02cb90;
+    box-sizing: content-box;
+}
+.patientInf-head>h4{
+    color: #333;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font:bold 14px "Microsoft Yahei";
+}
+.patientInf-body{
+    width: 100%;
+    box-sizing: border-box;
+    padding:10px 20px;
+}
+.patientInf-body>table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.patientInf-body td{
+    width: 13%;
+    padding: 7px 0;
+}
+.patientInf-body input,select{
+    vertical-align: middle;
+    border-radius: 4px ;
+    border:1px solid #999 ;
+}
+.patientInf-body input{
+    width: 110px;
+    height:28px ;
+    text-indent: 5px;
+    font: 14px "Microsoft Yahei";
+    color: #666666;
+}
+
+.patientInf-body input::-webkit-input-placeholder{
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.patientInf-body input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.patientInf-body input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.patientInf-body input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+
+.patientInf-body select{
+    width: 110px;
+    height:30px ;
+    font: 14px "Microsoft Yahei";
+    color: #666666;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/downSelect.png") no-repeat scroll 95% center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 15px;
+    padding-left: 10px;
+}
+.patientInf-body select>option{
+    text-indent: 5px;
+}
+.patientInf-body span{
+    color: #333333;
+    font: 14px "Microsoft Yahei";
+    vertical-align: middle;
+}
+
+
+.patientInf-body img{
+  width: 14px;
+    vertical-align: middle;
+}
+.p-td-div{
+    width: 30%;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.p-td-div>form{
+    width: 100%;
+    height: 100%;
+}
+
+#tags_tag{
+    width:30%;
+}
+
+
+/*用药信息区域   lgy----------------------------------------------------*/
+.medicineInf{
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    box-shadow:0 0 10px #F3F3F3;
+}
+.medicineInf-header{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #02cb90;
+}
+.medicineInf-header>h4{
+    color:#333;
+    font:bold 14px "Microsoft Yahei";
+    box-sizing: border-box;
+    padding:0 20px;
+}
+.medicineInf-body{
+    width: 100%;
+   max-height: 500px;
+    overflow: auto;
+    padding-bottom: 20px;
+}
+
+/*表格滚动条样式*/
+.medicineInf-body::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.medicineInf-body::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.medicineInf-body::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.medicineInf-body::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.medicineInf-body::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.medicineInf-body::-webkit-scrollbar-corner {
+    display: none;
+}
+.medicineInf-body::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+.medicineInf-body>table{
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.medicineInf-body td{
+    color: #333333;
+    border: 1px solid #CCCCCC;
+    text-align: left;
+    font: 14px "Microsoft Yahei";
+    text-indent: 1%;
+    padding:5px 0 ;
+}
+.td-img>img{
+    width: 14px;
+    position: relative;
+    top: 2px;
+}
+.medicineInf-body>table tr{
+    background:white;
+}
+
+.medicineInf-body>table tr:nth-child(2n+1){
+    background:#f8f8f8;
+}
+#medicineInf-firstTr{
+    background: white;
+    border-top: none;
+    position: relative;
+    z-index: 100;
+}
+#medicineInf-firstTr td{
+    border-top: none;
+    background-color:#3CAAE7 ;
+}
+
+#medicineInf-firstTr~tr>td:nth-child(5){
+    text-indent:0;
+}
+#medicineInf-firstTr~tr>td:nth-child(5)>img{
+    visibility: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#medicineInf-firstTr~tr>td:nth-child(5)>span{
+    font: 14px "Microsoft Yahei";
+    vertical-align: middle;
+    margin-left: 5px;
+}
+#medicineInf-firstTr~tr>td:nth-child(1)>img{
+    visibility: hidden;
+}
+.medicineInf-body tr>td:nth-child(1){
+    width:2%;
+    text-align:center;
+    text-indent:0;
+}
+.medicineInf-body tr>td:nth-child(2){
+    width:2%;
+    text-align:center;
+    text-indent:0;
+}
+.medicineInf-body tr>td:nth-child(3){
+    width:90px;
+}
+.medicineInf-body tr>td:nth-child(4){
+    width:2%;
+    text-align:center;
+    text-indent:0;
+}
+
+.medicineInf-body td>select{
+    width: 80%;
+    border: none;
+    background: transparent;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/downSelect.png") no-repeat scroll 95% center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 15px;
+}
+.medicineInf-body td>select>option{
+    font: 14px "Microsoft Yahei";
+    color: #333333;
+}
+#medicineInf-firstTr>td{
+    font:bold 14px "Microsoft Yahei";
+   color: #333333;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.medicineInf-btn{
+    position: absolute;
+    top:8px;
+    right:0;
+}
+
+.medicineInf-btn>button{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 20px ;
+    border-right: 1px solid #ccc;
+}
+.medicineInf-btn>button:nth-child(4){
+    display: none;
+}
+.medicineInf-btn>button:nth-child(5){
+    display: none;
+}
+.medicineInf-btn>button:last-child{
+    border-right: none;
+}
+.medicineInf-btn>button>span{
+    font:14px "Microsoft Yahei";
+    color:#333 ;
+    vertical-align: middle;
+}
+.medicineInf-btn>button>img{
+    vertical-align: middle;
+    height: 16px;
+}
+
+.hideTr{
+    display: none;
+}
+
+
+/*弹窗区域  lgy-------------------------------------------------------------------------------------------*/
+/*所有弹窗的大小设置*/
+.alertBox{
+    border: 1px solid #797979;
+    position:absolute;
+    background-color:white ;
+    display: none;
+    transition: all;
+    -webkit-transition: all;
+    min-height: 550px;
+}
+.medicineInformation-BOx{
+    width: 50%;
+    height: 66vh;
+    left: 25%;
+    top: 17%;
+}
+.medicineFrequency-BOx{
+    width: 26%;
+    height: 50vh;
+    left: 37%;
+    top: 25%;
+}
+
+.medicineWay-BOx{
+    width: 26%;
+    height: 50vh;
+    left: 37%;
+    top: 25%;
+}
+
+.ClinicDepartment-Box{
+    width: 30%;
+    height: 50vh;
+    left: 35%;
+    top: 25%;
+}
+.mannagerDoctor-Box{
+    width: 30%;
+    height: 50vh;
+    left: 35%;
+    top: 25%;
+}
+
+.operationName-Box{
+    width: 30%;
+    height: 50vh;
+    left: 35%;
+    top: 25%;
+}
+
+
+
+/*弹窗公用样式------------------*/
+.alertBox-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*ͷ头部*/
+.alertBox header{
+    width: 100%;
+    height:6.8%;
+    background-color: #02CB90;
+    position: relative;
+}
+.alertBox header>div:nth-child(1){
+    position: absolute;
+    width: 80%;
+    height: 30px;
+    left:10px;
+    top: 10px;
+    bottom: 0;
+    margin: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    color: #FFFFFF;
+    font: bold 14px "Microsoft Yahei";
+}
+.alertBox header>div:nth-child(1)>span{
+    color: #FFFFFF;
+    font: bold 14px "Microsoft Yahei";
+}
+
+.alertBox header>div:nth-child(2){
+    width: 30px;
+    height: 70%;
+    position: absolute;
+    right: 1%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    line-height:100%;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.alertBox header>div:nth-child(2)>span{
+    display: inline-block;
+    color:white;
+    font:bold 18px "Microsoft Yahei";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/*身体*/
+section{
+    width: 98%;
+    height: 82.6%;
+    margin: auto;
+}
+.s1{
+    width: 100%;
+    margin: auto;
+    padding: 2% 0 ;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 4px 4px #C4DBE9;
+}
+.s1>span{
+    color: #333333;
+    font: 14px "Microsoft Yahei";
+    vertical-align: middle;
+
+}
+.s1>input{
+    width: 40%;
+    height:38px;
+    vertical-align: middle;
+    border-radius: 4px;
+    border:1px solid #CCCCCC;
+    text-indent: 1rem;
+}
+.s1 input::-webkit-input-placeholder{
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.s1 input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.s1 input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.s1 input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    font: 14px "Microsoft Yahei";
+    color: #CCCCCC;
+}
+.s1>button{
+    height: 38px;
+    text-align: center;
+    width:60px ;
+    vertical-align: middle;
+    color: white;
+    font: 14px "Microsoft Yahei";
+    cursor: pointer;
+    background-color: #02cb90;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-left: 15px;
+}
+.s1>button:hover{
+    border: 1px solid #02cb90;
+    color: #02cb90;
+    background: white;
+}
+.s2{
+    width: 100%;
+    height: 83%;
+    overflow: auto;
+    margin-top: 14px;
+}
+.s2::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.s2::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.s2::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.s2::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.s2::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.s2::-webkit-scrollbar-corner {
+    display: none;
+}
+.s2::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+
+
+.s2>table{
+    width: 100%;
+    border-collapse: collapse;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.s2 td{
+    border: 1px solid #CCCCCC;
+    text-align: left;
+    font: 14px "Microsoft Yahei";
+    color: #333333;
+    text-indent:2%;
+    padding: 5px 0;
+}
+.s2 td:last-child{
+    border-right: none;
+}
+.s2 td:first-child{
+    border-left: none;
+}
+.s2 tr{
+    background-color: #FFFFFF;
+}
+.s2 tr:nth-child(2n+1){
+    background-color:#f8f8f8;
+}
+.s2 tr:nth-child(1){
+   background-color: white;
+}
+
+.s2 tr:nth-child(1)>td{
+    font: bold 14px "Microsoft Yahei";
+    color: #333;
+    padding: 7px 0;
+}
+
+/*尾部*/
+footer{
+    width: 100%;
+    height:10%;
+    margin-top: 10px;
+}
+.f1{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 -4px 4px #C4DBE9;
+}
+
+.f1>div:nth-child(1){
+    width:38%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: 14px "Microsoft Yahei";
+    color: #333333;
+}
+.f1>div:nth-child(1)>span{
+    font: 14px "Microsoft Yahei";
+    color: #333333;
+}
+.f1>div:nth-child(2){
+    width:60%;
+    height: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: right;
+}
+
+.f1>div:nth-child(2)>button{
+    cursor: pointer;
+    /*width:16%;*/
+    /*padding: 5px 0;*/
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    font:14px "Microsoft Yahei";
+    background-color: #02cb90;
+    border:1px solid transparent;
+    border-radius: 4px;
+
+}
+.f1>div:nth-child(2)>button:nth-child(1){
+    margin-right:20px;
+}
+.f1>div:nth-child(2)>button:nth-child(1):hover{
+    background: white;
+    border: 1px solid #02cb90;
+    color: #02cb90;
+}
+.f1>div:nth-child(2)>button:nth-child(2){
+    background: white;
+    border: 1px solid #999;
+    color: #333;
+}.f1>div:nth-child(2)>button:nth-child(2):hover{
+     background: #02cb90;
+     border: none;
+     color: white;
+ }
+
+
+/*药品信息中连线样式设计 lgy*/
+.medicineInf-body tr:nth-child(1)~tr>td:nth-child(4){
+    position: relative;
+}
+.groupLineHeader{
+    width: 50%;
+    height: 50%;
+    border-top: 2px solid #3CAAE7;
+    border-left: 2px solid #3CAAE7;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.groupLineFooter{
+    width: 50%;
+    height: 50%;
+    border-left: 2px solid #3CAAE7;
+    border-bottom: 2px solid #3CAAE7;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.groupLineBodyYes{
+    width: 50%;
+    height: 100%;
+    border-left: 2px solid #3CAAE7;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.groupLineBodyYes>div{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: 2px solid #3CAAE7;
+}
+
+/*药品说明书窗口---------------------------------------------------------*/
+.medicineBook-Box{
+    width: 730px;
+    height: 50vh;
+    left: 25%;
+    top: 25%;
+    z-index: 2;
+}
+.medicineBook-Box .alertBox-box{
+    position: relative;
+}
+.bookBody{
+    width: 100%;
+    height:85%;
+    position: relative;
+    padding-top: 20px;
+    box-sizing: border-box;
+
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.bookBody>div:nth-child(1){
+    flex: 1;
+    height: 100%;
+    margin: 0 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px #ECECEC;
+    border-top: 2px solid #02cb90;
+}
+
+.bookBody>div:nth-child(2){
+    flex:3;
+    margin: 0 10px;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px #ECECEC;
+    border-top: 2px solid #02cb90;
+}
+.flex-title{
+    width: 100%;
+    font: bold  14px "Microsoft Yahei";
+    color:#333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    box-sizing: content-box;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: center;
+}
+.flex-title2{
+    text-align: left;
+    text-indent: 10px;
+}
+
+
+.bookBody::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.bookBody::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.bookBody::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.bookBody::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.bookBody::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.bookBody::-webkit-scrollbar-corner {
+    display: none;
+}
+.bookBody::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+
+.bookBody-top{
+    width:88% ;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+.bookBody-top>span{
+    font: bold 20px "Microsoft Yahei";
+    color: #555555;
+}
+.bookBody-topRight{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.bookBody-topRight>a{
+    font: 14px "Microsoft Yahei";
+    color: #2FA4E6;
+    text-decoration: none;
+}
+.bookBody-body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.bookBody-body::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.bookBody-body::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.bookBody-body::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.bookBody-body::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.bookBody-body::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.bookBody-body::-webkit-scrollbar-corner {
+    display: none;
+}
+.bookBody-body::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+.bookBody-body li{
+    width: 100%;
+}
+.bookBody-body li>div:nth-child(1){
+    font:bold 14px "Microsoft Yahei";
+    color: #2FA4E6;
+    position: relative;
+}
+
+.bookBody-body li>div:nth-child(1)>a{
+  position: absolute;
+    top: -20px;
+}
+.bookBody-body li>div:nth-child(2){
+    font:14px "Microsoft Yahei";
+    color: #545555;
+    padding-left: 1rem;
+    width:100%;
+    box-sizing: border-box;
+}
+
+.greyTd{
+    color: #999 !important;
+}
+/*锚点盒子*/
+.maoDian-box{
+ width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+.maoDian-box::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.maoDian-box::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.maoDian-box::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.maoDian-box::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.maoDian-box::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.maoDian-box::-webkit-scrollbar-corner {
+    display: none;
+}
+.maoDian-box::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+
+.maoDian-box>ul{
+    width: 100%;
+}
+
+.maoDian-box>ul>li{
+    margin-left: 5px;
+    border-left: 1px solid #545555;
+    position: relative;
+}
+
+.maoDian-box>ul>li>div{
+    position: absolute;
+    left:-4px;
+    top: 4px;
+    bottom: 0;
+    margin: auto;
+    width: 7px ;
+    height: 7px;
+    border-radius: 50%;
+    background: #545555;
+}
+#firstLi-mengBan{
+    position: absolute;
+    background:white;
+    opacity: 1;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 6px;
+}
+.maoDian-box>ul a{
+    text-decoration: none;
+    font: 12px "Microsoft Yahei";
+    color: #545555;
+}
+
+/*审查结果窗口*/
+.ReviewResults-Box{
+    width: 60%;
+    height: 60vh;
+    left: 20%;
+    top: 25%;
+    border:1px solid #cccccc;
+    overflow: hidden;
+    min-height: 585px;
+}
+.ReviewResults-Box>iframe{
+    width:100%;
+    height:99%;
+    overflow: auto;
+}
+.ReviewResults-Box-header{
+    position: absolute;
+    width: 100%;
+    height: 45px;
+  background: #02cb90;
+    top: 0;
+    left: 0;
+}
+.ReviewResults-Box-header:hover{
+   cursor: inherit;
+}
+.rbh-box{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+.rbh-box>div:nth-child(1){
+    margin-top: 12px;
+}
+.rbh-box>div:nth-child(1)>span{
+    color: white;
+    font: bold 14px "Microsoft Yahei";
+}
+.rbh-box>div:nth-child(2){
+    position:absolute ;
+    right: 0;
+    top: 5px;
+}
+.rbh-box>div:nth-child(2):after{
+    content: '';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+.rbh-box>div:nth-child(2)>img{
+    float: right;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.rbh-box>div:nth-child(2)>img:nth-child(1){
+    float: right;
+    margin-right: 0;
+}
+
+
+.ReviewResults-Box-footer{
+    width: 95%;
+    position: absolute;
+   bottom: 72px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+
+}
+
+.f-btn{
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 12px;
+}
+
+.f-btn-submit{
+    font: 14px "Microsoft Yahei";
+    color: #fefefe;
+    border: 1px solid #fe7b11;
+    background-color: #fe7b11;
+    outline: none;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 6rem ;
+    height: 30px ;
+    cursor: pointer;
+}
+.f-btn-back{
+    font: 14px "Microsoft Yahei";
+    color: #fefefe;
+    border: 1px solid #28c57e;
+    background-color: #28c57e;
+    outline: none;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 6rem ;
+    height: 30px ;
+    cursor: pointer;
+}
+
+.f-btn-stopSubmit{
+    font: 14px "Microsoft Yahei";
+    color: white;
+    border:none;
+    background-color: #A3A3A3;
+    outline: none;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 6rem ;
+    height: 30px ;
+}
+
+
+.userMedicine-inf{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 98%;
+    text-align: center;
+    border-top: 1px solid #CCCCCC;
+}
+.userMedicine-inf>span{
+    vertical-align: top;
+    font: 14px "Microsoft Yahei";
+}
+.userMedicine-inf>textarea{
+    vertical-align: top;
+    width:57%;
+    height: 50px;
+    text-indent: 2rem;
+}
+
+/*小提示窗口-------------------------------------------------------*/
+.tipAlert{
+    width: 20vw;
+    height: 15vh;
+    border: 1px solid #CCCCCC;
+    position: fixed;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+    border-radius: 4px;
+    background: white;
+    display: none;
+}
+.tipHeader{
+    height: 30%;
+    background: #CCCCCC;
+    position: relative;
+}
+.tipHeader>div{
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+   color: black;
+    font:  16px "Microsoft Yahei";
+}
+.tipBody{
+    margin-top: 15px;
+
+    max-height: 50%;
+    overflow: auto;
+}
+.tipBody>div{
+    width: 80%;
+    margin: auto;
+    word-break: break-all;
+}
+
+
+.tipBody::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.tipBody::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.tipBody::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.tipBody::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.tipBody::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.tipBody::-webkit-scrollbar-corner {
+    display: none;
+}
+.tipBody::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+
+.tipBody>div>img{
+    vertical-align: middle;
+}
+.tipBody>div>span{
+    margin-left: 1rem;
+    vertical-align: middle;
+    font: 14px "Microsoft Yahei";
+    color: #FF6600;
+}
+
+/*禁止操作弹窗*/
+.forbiddenBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display:none;
+
+}
+.forbiddenBox-mb{
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: black;
+}
+.forbiddenBox-son{
+    width: 30%;
+    height: 350px;
+    left: 35%;
+    top: 25%;
+    position: absolute;
+    z-index: 1002;
+    min-height: 20vh;
+    display: block;
+}
+.forbiddenBox-son header{
+    height: 40px;
+}
+
+.forbiddenBox-son section{
+    width: 100%;
+    height: auto;
+}
+.forbiddenBox-son section>div:nth-child(1){
+    width: 100%;
+    text-align: center;
+    font: 14px "微软雅黑";
+    color: #333333;
+    padding:  20px;
+    box-sizing: border-box;
+}
+.process-box{
+    width: 100%;
+    text-align: center;
+}
+#processbar{
+    width: 90%;
+    display: block;
+    margin: auto;
+    height: 20px;
+    border: 1px solid #02cb90;
+    border-radius:10px;
+}
+/*已经完成*/
+#processbar::-webkit-progress-bar{
+          background-color: white;
+           border-radius: 10px;
+       }
+/*未完成*/
+#processbar::-webkit-progress-value{
+           background: #02cb90;
+    border-radius: 8px;
+    }
+
+.forbiddenBox-son footer{
+    width: 100%;
+    text-align: center;
+}
+
+
+/*驾药助手图标链接*/
+.jazsLink{
+    position: fixed;
+    right: 20px;
+    top:60px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.jazsLink:hover{
+    margin-top: -10px;
+}
+.userMedicine-inf{
+    text-align: right;
+    width: 100%;
+}
+.f-btn-back{
+    margin-right: 20px;
+    border: 1px solid #02cb90;
+    color: #02cb90;
+    background: white;
+}
+.f-btn-back:hover{
+    border: none;
+    color: white;
+    background:#02cb90;
+}
+.f-btn-submit{
+    border: none;
+    color: white;
+    background:#02cb90;
+}
+.f-btn-submit:hover{
+    border: 1px solid #02cb90;
+    color: #02cb90;
+    background: white;
+}
+
+.alertBox{
+    border: none;
+    box-shadow: 0 0 10px #eee;
+}
+.forbiddenBox-son{
+    width: 440px;
+    height: 150px;
+    min-height: 0;
+}
+
+/*药师审核结果不通过弹窗*/
+.noPassBox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    display:none;
+}
+.noPassBox-son>alertBox-box{
+    box-sizing: border-box;
+    padding-bottom: 53px;
+}
+.noPassBox-mb{
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: black;
+}
+.noPassBox-son{
+    width: 60%;
+    height: 660px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 1002;
+    min-height: 585px;
+    display: block;
+
+
+}
+.forbiddenBox-son header{
+    height: 40px;
+}
+
+/*主体头部*/
+.noPassBox-son-body-title{
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom:2px solid #02cb90 ;
+}
+.noPassBox-son-body-title>div{
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+}
+.noPassBox-son-body-title>div>img{
+    vertical-align: middle;
+}
+.noPassBox-son-body-title>div>span{
+    vertical-align: middle;
+    font:bold 14px "微软雅黑";
+    color: #c32626;
+}
+.noPassTitle-doctorName{
+    float: right;
+    font:bold 14px "微软雅黑";
+    color: #333333;
+}
+.noPassTitle-doctorName>span{
+    color: #02cb90;
+}
+/*主体未通过原因*/
+.noPassBox-son-body-reasons{
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 0 10px #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+.noPassBox-son-body-reasons>div:nth-child(1){
+    font:bold 14px "微软雅黑";
+    color: #333333;
+}
+.noPassBoxul-box{
+    width: 100%;
+    max-height: 150px;
+    overflow: auto;
+}
+
+.noPassBoxul-box::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.noPassBoxul-box::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.noPassBoxul-box::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.noPassBoxul-box::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.noPassBoxul-box::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.noPassBoxul-box::-webkit-scrollbar-corner {
+    display: none;
+}
+.noPassBoxul-box>ul::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+#noPassBoxUl>li{
+    width: 100%;
+    border-bottom: 1px dashed #CCCCCC;
+    padding: 5px 0;
+}
+
+#noPassBoxUl>li>div{
+    width: 100%;
+    padding: 5px 0;
+}
+#noPassBoxUl>li>div:nth-child(1){
+   width: 100%;
+}
+#noPassBoxUl>li>div:nth-child(1)>img{
+   vertical-align: middle;
+   margin: 0 5px;
+}
+#noPassBoxUl>li>div:nth-child(1)>span{
+    vertical-align: middle;
+    font:14px "微软雅黑";
+    color: #666;
+}
+#noPassBoxUl>li>div:nth-child(1)>span:nth-child(6){
+   color: #333;
+}
+#noPassBoxUl>li>div:nth-child(2){
+   box-sizing: border-box;
+    padding-left: 14px;
+    word-break: break-all;
+    font:14px "微软雅黑";
+    color: #666;
+}
+.feedback-title{
+    font: bold 14px "微软雅黑";
+    color: #333333;
+    margin-top: 20px;
+}
+#feedback-content{
+    width: 100%;
+    font: 14px "微软雅黑";
+    color: #666;
+    word-break: break-all;
+    height: 60px;
+    overflow: auto;
+}
+
+#feedback-content::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+#feedback-content::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.feedback-content::-webkit-scrollbar-track     {
+    background: #fff;
+}
+#feedback-content::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+#feedback-content::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+#feedback-content::-webkit-scrollbar-corner {
+    display: none;
+}
+#feedback-content::-webkit-scrollbar-resizer  {
+    background:white;
+}
+/*主体坚持用药*/
+.insistOnMedication{
+    width: 100%;
+    margin: 20px 0;
+    box-shadow: 0 0 10px #eee;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.insistOnMedication>div:nth-child(1){
+    font:bold 14px "微软雅黑";
+    color: #333333;
+}
+.insistOnMedication>form{
+    width: 100%;
+}
+.insistOnMedication>form>div{
+    width: 100%;
+    padding: 5px 0;
+}
+.insistOnMedication>form>div>label{
+    font: 14px "微软雅黑";
+    color: #666;
+    cursor: pointer;
+}
+.insistOnMedication-form-reasonDetail{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.insistOnMedication-form-reasonDetail>textarea{
+    width: 100%;
+    height: 80px;
+    font: 14px "微软雅黑";
+    color: #666;
+    text-indent: 2rem;
+    border-radius: 4px;
+}
+
+.noPassBox-son footer{
+    width: 100%;
+    height: auto;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+}
+.noPassBox-son footer>div{
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    padding: 10px 0;
+}
+
+
+
+/*尾部*/
+.forbiddenBox-btn{
+    border-radius: 4px;
+    border:1px solid #02cb90;
+    cursor: pointer;
+    color: #02cb90;
+    font:14px "微软雅黑";
+    padding:5px 20px ;
+    background: white;
+    /*display: none;*/
+}
+.forbiddenBox-btn:hover{
+    background: #02cb90;
+    border: none;
+    color: white;
+}
+
+.forbiddenBox-btnDoubleDoIt{
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    color: white;
+    background: #02cb90;
+    font:14px "微软雅黑";
+    padding:5px 20px ;
+}
+.forbiddenBox-btnDoubleDoIt:hover{
+    border: 1px solid #02cb90;
+    background: white;
+    color: #02cb90;
+}
+.forbiddenBox-btnIgnore{
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    color: white;
+    background: #02cb90;
+    font:14px "微软雅黑";
+    padding:5px 20px ;
+    display: none;
+}
+.forbiddenBox-btnIgnore:hover{
+    border: 1px solid #02cb90;
+    background: white;
+    color: #02cb90;
+}
+.forbiddenBox-btn2{
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    color: white;
+    background: #F77F37;
+    font:14px "微软雅黑";
+    padding:5px 20px ;
+    /*display: none;*/
+}
+.forbiddenBox-btn2:hover{
+    border: 1px solid #F77F37;
+    background: white;
+    color: #F77F37;
+}
+
+.leftForbiddenShow{
+    float: left;
+    margin-top: 10px;
+    display: none;
+}
+
+
+.leftForbiddenShow>img{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.leftForbiddenShow>span{
+    vertical-align: middle;
+    font:14px "微软雅黑";
+    color: #02cb90;
+}
+
+/*遮罩层*/
+.MaskWindow{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    display: none;
+}
+
+/*说明书提示信息*/
+.bookTip-Box{
+    width: 30%;
+    height:35vh;
+    left: 35%;
+    top: 30%;
+    display:none;
+    min-height: 340px;
+}
+.bookTip-Box .alertBox-box{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 38px;
+    padding-bottom: 37px;
+}
+.bookTip-Box header{
+    position: absolute;
+    width: 100%;
+    height: 38px;
+    left: 0;
+    top: 0;
+}
+.bookTip-Box section{
+    width: 100%;
+   height: 100%;
+    position: relative;
+}
+
+.bookTip-Box footer{
+    width: 100%;
+    box-shadow: 0 -1px 5px #C4DBE9;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    margin-top: 0;
+    padding: 4px 0;
+}
+/*.bookTip-Box footer:after{*/
+    /*content: '';*/
+    /*visibility: hidden;*/
+    /*display: block;*/
+    /*clear: both;*/
+    /*height:0;*/
+/*}*/
+
+.bookTip-body{
+    width: 100%;
+    height: 100%;
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.bookTip-body>div{
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+/*提示信息左侧*/
+.bookTip-body>div:nth-child(1){
+    flex: 1;
+}
+.bookTip-body>div:nth-child(1)>div{
+    flex: 1;
+    background:#ccc;
+    position: relative;
+    border-top: 1px solid white;
+    cursor: pointer;
+    transition: all .1s linear;
+}
+.bookTip-body-content>img:nth-child(2){
+    display: none;
+}
+.bookTip-body .bookTip-body-content>div{
+     display: none;
+ }
+.bookTip-body .bookTip-body-content:nth-child(1)>div{
+    display: block;
+}
+.bookTip-body>div:nth-child(1)>div:nth-child(1)>img:nth-child(1){
+    display: none;
+}
+.bookTip-body>div:nth-child(1)>div:nth-child(1)>img:nth-child(2){
+    display:inline-block;
+}
+.bookTip-body>div:nth-child(1)>div:first-child{
+    flex:1;
+    background:#02cb90;
+}
+
+.flex-center-icon{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.flex-center-Triangle{
+    position: absolute;
+    right:-6px;
+    top: 3px;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    border: 4px solid #02cb90;
+    border-right: 4px solid transparent;
+    border-bottom:4px solid transparent;
+}
+
+
+
+
+/*提示信息右侧*/
+.bookTip-body>div:nth-child(2){
+    flex:14;
+    box-sizing: border-box;
+    padding-left: 8px;
+}
+.flex-body-right{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.flex-body-right>div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    box-sizing: border-box;
+    padding-top: 31px;
+    z-index: 0;
+    opacity:0;
+}
+.flex-body-right>div:first-child{
+    display: block;
+    z-index: 1;
+    opacity: 1;
+}
+.flex-body-right>div>div:nth-child(1){
+    font:bold 14px "微软雅黑";
+    color: #333;
+    padding: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.flex-body-right>div>div:nth-child(2){
+    font:14px "微软雅黑";
+    color: #666;
+    overflow: auto;
+    width: 100%;
+    line-height: 25px;
+    height: 100%;
+}
+
+
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar {
+    width:8px;
+    height:8px;
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-button    {
+    background: #fff;
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-track     {
+    background: #fff;
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-track-piece {
+    /*background:url(http://www.lyblog.net/wp/wp-content/themes/mine/img/stripes_tiny_08.png);*/
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:4px;
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-corner {
+    display: none;
+}
+.flex-body-right>div>div:nth-child(2)::-webkit-scrollbar-resizer  {
+    background:white;
+}
+
+.flex-body-right-body>span{
+    font: 14px "微软雅黑" ;
+    color:#02cb90;
+}
+.flex-body-right-body>div{
+   width: 100%;
+    word-break: break-all;
+    font: 14px "微软雅黑" ;
+    color:#333;
+   box-sizing: border-box;
+    padding-left: 1rem;
+    line-height: 25px;
+}
+.flex-body-right-body2>div{
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 72px;
+
+}
+.flex-body-right-body2>div:after{
+    content: '';
+    visibility: hidden;
+    height: 0;
+    display: block;
+    clear: both;
+}
+.flex-body-right-body2>div>span{
+    font: 14px "微软雅黑" ;
+    color:#02cb90;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.flex-body-right-body2>div>div{
+    width: 100%;
+    word-break: break-all;
+    font: 14px "微软雅黑" ;
+    color:#333;
+}
+
+
+    /*提示信息尾部*/
+.flex-footer-left{
+    float: left;
+    vertical-align: middle;
+}
+.flex-footer-left>img{
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.flex-footer-right{
+    float: right;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/*倒计时*/
+.cutDown{
+    font: 14px "微软雅黑";
+    display:block;
+   position: absolute;
+    left: 400px ;
+    top: 14px;
+}
+
+.cutDown>span:nth-child(1){
+    color: #02cb90;
+}
+.cutDown>span:nth-child(2){
+    color: red;
+}

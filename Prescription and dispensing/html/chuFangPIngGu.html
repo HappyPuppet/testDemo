@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处方评估</title>
+    <link rel="stylesheet" href="../css/chuFangPingGu.css"/>
+    <link rel="stylesheet" href="../css/jquery.tagsinput.css"/>
+</head>
+<body>
+<!--模板调用行  lgy-->
+<div class="userModels">
+    <!--<span>模板调用：</span>-->
+    <!--<select>-->
+        <!--<option selected >请选择</option>-->
+        <!--<option  >相互作用</option>-->
+        <!--<option >配伍禁忌</option>-->
+        <!--<option >计量范围</option>-->
+    <!--</select>-->
+    <!--<button>打开模板</button>-->
+    <!--<button>保存模板</button>-->
+    <select id="choose-example">
+        <option value="false">选择示例</option>
+    </select>
+    <button class="userModels-clear">清空</button>
+    <button class="userModels-examination" id="examination"><img src="../img/chufangshencha.png" alt="处方审查图标"/>&nbsp;<span>处方审查</span></button>
+    <button class="userModels-sedExamination" style="display: none">发送</button>
+    <button class="payBtn">缴费</button>
+    <button class="sendDrugBtn">发药</button>
+</div>
+<!--病人基本信息  lgy-->
+<div class="patientInf">
+    <div class="patientInf-head"><h4>病人基本信息</h4></div>
+    <div class="patientInf-body">
+        <table>
+            <tr>
+                <td width="20">
+                    <span>病人ID：</span>
+                    <input type="text"  id="p-ID" />
+                </td>
+                <td width="20">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;病人姓名：</span>
+                    <input type="text"  id="p-name" />
+                </td>
+                <td width="20">
+                    <span>门诊/住院号：</span>
+                    <input type="text"  id="p-mzOrZy" />
+                </td>
+                <td>
+                    <span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+                    <select id="p-sex">
+                        <option >请选择</option>
+                        <option  >男</option>
+                        <option >女</option>
+                    </select>
+                </td>
+                <td>
+                    <span>出生日期：</span>
+                    <input type="text" id="p-birth" placeholder="年/月/日" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>身&nbsp;&nbsp;&nbsp;&nbsp;高：</span>
+                    <input type="text"  id="p-height" placeholder="正整数" />
+                    <span>cm</span>
+                </td>
+                <td>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;体&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重：</span>
+                    <input type="text"  id="p-weight"  placeholder="可保留一位小数"/>
+                    <span>kg</span>
+                </td>
+                <td>
+                    <span>哺&nbsp;&nbsp;乳&nbsp;状&nbsp;&nbsp;态：</span>
+                    <select id="p-lactationStatus">
+                        <option selected >请选择</option>
+                        <option  >是</option>
+                        <option >否</option>
+                    </select>
+                </td>
+                <td>
+                    <span>妊娠状态：</span>
+                    <select id="p-pregnancyState">
+                        <option selected >请选择</option>
+                        <option >是</option>
+                        <option >否</option>
+                    </select>
+                </td>
+                <td>
+                    <span>孕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期：</span>
+                    <input type="text"  id="p-pregnancy" disabled="disabled" placeholder="正整数"/>
+                    <span>周</span>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <span>门诊/住院次数：</span>
+                    <input type="text"  id="p-mzAndZycs" value="1" style="width: 64px"/>
+                </td>
+                <td>
+                    <img src="../img/redStar.png" alt="红色五角星"/>
+                    <span>就诊科室：</span>
+                    <input type="text"  id="p-Clinic-Department" />
+                </td>
+                <td>
+                    <span>就&nbsp;&nbsp;诊&nbsp;医&nbsp;&nbsp;师：</span>
+                    <input type="text"  id="p-doctor" />
+                </td>
+                <td>
+                    <span>就诊日期：</span>
+                    <input type="text" id="p-clinic-Date" placeholder="年/月/日" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})" />
+                </td>
+                <td>
+                    <span>处方来源：</span>
+                    <select id="p-door">
+                        <option selected >门诊</option>
+                        <option  >急诊</option>
+                        <option >住院</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>&nbsp;慢性病：</span>
+                    <select id="p-chronicDisease">
+                        <option  selected>请选择</option>
+                        <option  >普通慢性病</option>
+                        <option >特殊慢性病</option>
+                    </select>
+                </td>
+                <td>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;手术名称：</span>
+                    <input type="text" maxlength="30" id="p-operationName" />
+                </td>
+                <td style="position: relative">
+                    <div style="position: absolute;width:500%; left: 0;top:10px">
+                        <span style="margin-left: 18px">诊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;断：</span>
+                        <div class="p-td-div">
+                            <form action="">
+                                <input name="tags" id="tags" value="" />
+                            </form>
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div style="margin-top:7px">
+
+
+        </div>
+    </div>
+</div>
+
+<!--用药信息   lgy-->
+<div class="medicineInf">
+    <div class="medicineInf-header">
+        <h4>用药信息</h4>
+        <div class="medicineInf-btn">
+            <button><img src='../img/tianjia.png' alt="添加"/>&nbsp;<span>添加</span></button>
+            <button><img src='../img/shanchu.png' alt="删除"/>&nbsp;<span>删除</span></button>
+            <button><img src='../img/qingkong.png' alt="清空"/>&nbsp;<span>清空</span></button>
+            <button strat-group="false"><img src='../img/chengzu.png' alt="开始设置成组/取消设置成组"/>&nbsp;<span>开始设置成组</span></button>
+            <button><img src='../img/quxiaochengzu.png' alt="添加"/>&nbsp;<span>取消设置成组</span></button>
+        </div>
+    </div>
+    <div class="medicineInf-body">
+        <table>
+            <tr id="medicineInf-firstTr">
+                <td>警</td>
+                <td>选</td>
+                <td class="hideTr">医嘱类型</td>
+                <td class="hideTr">组</td>
+                <td data-isClick="false" class="td-img"><img src="../img/redStar.png" alt="红色星星"/> 药品名称</td>
+                <td>剂型</td>
+                <td>规格</td>
+                <td>厂家</td>
+                <td>药品数量</td>
+                <td>数量单位</td>
+                <td>单次用量</td>
+                <td>用量单位</td>
+                <td data-isClick="false" class="td-img"><img src="../img/redStar.png" alt="红色星星"/>途径</td>
+                <td data-isClick="false">频次</td>
+                <td>用药天数</td>
+                <td class="hideTr">滴速（滴/分钟）</td>
+                <td class="hideTr">滴注时间（分钟）</td>
+            </tr>
+            <tr>
+                <td><img src="../img/fobiden.png" alt="fobiden.png"/></td>
+                <td><input type="checkbox" checked /></td>
+                <td class="hideTr"> <select><option selected>长期医嘱</option><option >临时医嘱</option></select></td>
+                <td class="hideTr"><div class=""><div></div></div></td>
+                <td data-isClick="false"><img src="../img/book.png" alt="bookPicture"/><span></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td contenteditable="true">1</td>
+                <td></td>
+                <td contenteditable="true">0.00</td>
+                <td></td>
+                <td data-isClick="false"></td>
+                <td data-isClick="false"></td>
+                <td contenteditable="true">1</td>
+                <td contenteditable="true" class="hideTr"></td>
+                <td contenteditable="true" class="hideTr"></td>
+                <input type="hidden"/>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--弹框区域 lgy-------------------------------------------------------->
+<!--药品信息弹窗-->
+<div class="alertBox medicineInformation-BOx">
+    <div class="alertBox-box">
+        <header>
+            <div><span>药品信息查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入药品名称" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>药品名称</td>
+                        <td>剂型</td>
+                        <td>规格</td>
+                        <td>厂家</td>
+                        <td>给药单位</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条药品信息</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!--用药频次弹窗-->
+<div class="alertBox medicineFrequency-BOx">
+    <div class="alertBox-box">
+        <header>
+            <div><span>用药频次查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入用药频次" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>用药频次</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条用药频次</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!--给药途径弹窗-->
+<div class="alertBox medicineWay-BOx">
+    <div class="alertBox-box">
+        <header>
+            <div><span>给药途径查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入给药途径" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>给药途径</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条给药途径</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+<!--就诊科室径弹窗-->
+<div class="alertBox ClinicDepartment-Box">
+    <div class="alertBox-box">
+        <header>
+            <div><span>就诊科室查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入就诊科室" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>科室代码</td>
+                        <td>科室名称</td>
+                        <input type="hidden"/>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条科室信息</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!--主管医生弹窗-->
+<div class="alertBox mannagerDoctor-Box">
+    <div class="alertBox-box">
+        <header>
+            <div><span>就诊医师查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入就诊医师" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>医师编号</td>
+                        <td>医师名称</td>
+                        <td>科室编码</td>
+                        <td>科室名称</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条医生信息</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!--手术选取弹窗-->
+<div class="alertBox operationName-Box">
+    <div class="alertBox-box">
+        <header>
+            <div><span>手术名称查询</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+            <div class="s1">
+                <span></span>&nbsp;<input placeholder="请输入手术名称" type="text"/><button>查询</button>
+            </div>
+            <div class="s2">
+                <table>
+                    <tr>
+                        <td>手术编码</td>
+                        <td>手术名称</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <footer>
+            <div class="f1">
+                <div>&nbsp;共<span>0</span>条手术信息</div>
+                <div><button>确定</button><button>取消</button>&nbsp;</div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!--药品说明书弹窗-->
+<div class="alertBox medicineBook-Box">
+    <div class="alertBox-box">
+        <header>
+            <div><span id="myBookNmae">药品信息</span>【说明书】</div>
+            <div><span>x</span></div>
+        </header>
+        <div class="bookBody">
+            <div>
+                <div class="flex-title">说明书标题</div>
+                <div class="maoDian-box">
+                    <ul>
+                        <!--<li><a href="#xixi1">【药品名称】</a><div></div></li>-->
+                    </ul>
+                    <div id="firstLi-mengBan"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex-title flex-title2">说明书</div>
+                <div class="bookBody-body">
+                    <ul>
+                        <!--<li>-->
+                        <!--<div>【药品名称1】<a name="xixi1"></a></div>-->
+                        <!--<div>药品名称：xxxxx</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--审查结果弹窗-->
+<div class="alertBox ReviewResults-Box">
+    <div class="ReviewResults-Box-header">
+        <div class="rbh-box">
+            <div><span>审查结果</span></div>
+            <div>
+                <img src="../img/close.png" alt="guanbi"/><img data-isBig="false" src="../img/fangDa.png" alt="fangda"/> <img src="../img/zuixiao.png" alt="suoxiao"/>
+            </div>
+
+        </div>
+    </div>
+    <iframe id="sendCheckIframe"  name=aa frameborder=0 src=''></iframe>
+    <!--尾部lgy-->
+    <div class="ReviewResults-Box-footer">
+        <div class="userMedicine-inf">
+            <div class="leftForbiddenShow"><img src="../img/nopass.png" alt="不通过图标"/><span>处方中存在拦截最低级别“XX”的不合理用药问题，请修改！</span></div>
+            <div class="f-btn">
+                <button class="f-btn-back">返回修改</button> <button class="f-btn-submit">提请审核</button> <button class="f-btn-stopSubmit">提请审核</button>
+                <button class="forbiddenBox-btnIgnore">忽略(签名执行)</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--小提示窗口 lgy-->
+<div class="tipAlert">
+    <div class="tipHeader"><div>提示</div></div>
+    <div class="tipBody">
+        <div><img src="../img/tipPictrue.png" alt="tipPictrue"/><span></span></div>
+    </div>
+</div>
+
+<!--禁止操作弹窗-->
+<div class="forbiddenBox">
+    <div class="forbiddenBox-mb"></div>
+
+    <div class="alertBox forbiddenBox-son">
+        <div class="alertBox-box ">
+            <header>
+                <div><span>等待审方药师审核</span></div>
+                <!--<div><span>x</span></div>-->
+            </header>
+            <section>
+                <div class="mycheckRuslt-bbbox">
+                   您的处方/医嘱已提交，正在等待审方药师审核，请稍等...
+                </div>
+                <div class="process-box">
+                    <progress  id="processbar" max="100" value="5"></progress><label id="processvalue"></label>
+                </div>
+            </section>
+            <footer>
+                <!--<button class="forbiddenBox-btn">关闭窗口</button>-->
+                <!--<button class="forbiddenBox-btn2">强制提交</button>-->
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!--药师审核结果不通过弹窗-->
+<div class="noPassBox">
+    <div class="noPassBox-mb"></div>
+
+    <div class="alertBox noPassBox-son">
+        <div class="alertBox-box ">
+            <header>
+                <div><span>审查结果</span></div>
+                <!--<div><span>x</span></div>-->
+            </header>
+            <section class="noPassBox-son-body">
+                <div class="noPassBox-son-body-title">
+                    <div>
+                        <img src="../img/tx.png" alt="提示小黄色灯泡"/>
+                        <span>审方药师审核未通过！</span>
+                        <div class="noPassTitle-doctorName">
+                            审方药师：<span id="checkDoctorName">张三</span>
+                        </div>
+
+                        <div class="cutDown">
+                            <span>倒计时：</span><span id="cutDownSpan">0</span>秒
+                        </div>
+                    </div>
+                </div>
+                <div class="noPassBox-son-body-reasons">
+                    <div>未通过原因：</div>
+                    <div class="noPassBoxul-box">
+                        <ul id="noPassBoxUl">
+                            <!--<li>-->
+                            <!--<div>-->
+                            <!--<span>1</span>.-->
+                            <!--<img src="../img/fobiden.png" alt="禁用图标"/>-->
+                            <!--<img src="../img/Notrecommend.png" alt="不推荐图标"/>-->
+                            <!--<img src="../img/Carefuluse.png" alt="慎用图标"/>-->
+                            <!--<img src="../img/focus.png" alt="关注图标"/>-->
+                            <!--<span>剂量范围</span>-->
+                            <!--&lt;!&ndash;<img src="../img/fobiden.png" alt="tip图标"/>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--<div>有毒有毒有毒有毒有毒有毒有毒有毒有毒有毒有毒有毒未通过！审方药师审核未通过！审方药师审核未通过！审方药师审核未通过！审方药师审核未通过！</div>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+                    <div class="feedback-title">反馈信息：</div>
+                    <!--<div class="feedback-content">-->
+                        <!-- -->
+                    <!--</div>-->
+                    <textarea name="" id="feedback-content" disabled style="resize:none" ></textarea>
+                </div>
+                <div class="insistOnMedication">
+                    <div>若坚持用药，请填写用药理由：</div>
+                    <form action="">
+                        <div>
+                            <input  type="radio" id="needReasonInput" value="1" name="reason" />
+                            <label for="needReasonInput">患者病情需要</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="otherReasonInput"  value="2" name="reason"/>
+                            <label for="otherReasonInput">其他：</label>
+                        </div>
+                        <div class="insistOnMedication-form-reasonDetail">
+                            <textarea disabled="true"  id="reasonDetail" placeholder="请填写用药理由" style="resize:none" ></textarea>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <footer>
+                <div class="noPassBox-footer">
+                    <button class="forbiddenBox-btn">返回修改</button>
+                    <button class="forbiddenBox-btnDoubleDoIt">双签执行</button>
+                    <button class="forbiddenBox-btn2">强制执行</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<!--药品信息提示窗口-->
+<div class="alertBox bookTip-Box">
+    <div class="alertBox-box">
+        <header>
+            <div><span>某某药品名称</span></div>
+            <div><span>x</span></div>
+        </header>
+        <section>
+           <div class="bookTip-body">
+               <div>
+                   <div class="bookTip-body-content" title="药品基本信息">
+                       <img class="flex-center-icon" src="../img/yyxxts1.png" alt="i图标"/>
+                       <img class="flex-center-icon" src="../img/yyxxts.png" alt="i图标"/>
+                       <div class="flex-center-Triangle"></div>
+                   </div>
+                   <div class="bookTip-body-content" title="医院重要提示">
+                       <img class="flex-center-icon" src="../img/yyzyts1.png" alt="Y图标"/>
+                       <img class="flex-center-icon" src="../img/yyzyts.png" alt="Y图标"/>
+                       <div class="flex-center-Triangle"></div>
+                   </div>
+                   <div class="bookTip-body-content" title="驾药信息提示">
+                       <img class="flex-center-icon" src="../img/jyxits1.png" alt="J图标"/>
+                       <img class="flex-center-icon" src="../img/jyxits.png" alt="J图标"/>
+                       <div class="flex-center-Triangle"></div>
+                   </div>
+               </div>
+               <div>
+                   <div class="flex-body-right">
+                       <div>
+                           <div>药品基本信息</div>
+                           <div class="flex-body-right-body2">
+                               <div>
+                                   <span style="left: 28px">零购：</span>
+                                   <div>是</div>
+                               </div>
+                               <div>
+                                   <span>药品状态：</span>
+                                   <div>启用</div>
+                               </div>
+                               <div>
+                                   <span>停用原因：</span>
+                                   <div>味道不好</div>
+                               </div>
+                               <div>
+                                   <span>贮藏方式：</span>
+                                   <div>避光</div>
+                               </div>
+                               <div>
+                                   <span>特殊药品：</span>
+                                   <div>避光</div>
+                               </div>
+                           </div>
+                       </div>
+                       <div>
+                           <div>医院重要提示</div>
+                           <div>懂啊东阿松懂啊东</div>
+                       </div>
+                       <div>
+                           <div >驾药信息提示</div>
+                           <div class="flex-body-right-body">
+                               <span>【】</span>
+                               <div></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </section>
+        <footer>
+            <div class="flex-footer-left">
+                <img title="说明书" src="../img/sms.png" alt="书图标"/>
+                <img title="跳转驾药助手页面" src="../img/jyzs.png" alt="驾药助手"/>
+            </div>
+            <div class="flex-footer-right">
+                <img title="说明书" src="../img/ji.png" alt="书图标"/>
+                <img title="跳转驾药助手页面" src="../img/OTC.png" alt="驾药助手"/>
+                <img title="跳转驾药助手页面" src="../img/she.png" alt="驾药助手"/>
+                <img title="跳转驾药助手页面" src="../img/xing.png" alt="驾药助手"/>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+<div class="jazsLink">
+    <img src="../img/jazsLink.png" alt="驾照式链接"/>
+</div>
+
+
+<!--一个全屏遮罩层-->
+<div class="MaskWindow"></div>
+<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="../js/cfscConfig.js" type="text/javascript"></script>
+<script src="../js/WdatePicker.js" type="text/javascript"></script>
+<script src="../js/jquery.tagsinput.js" type="text/javascript"></script>
+<script src="../js/chuFangPingGu.js" type="text/javascript"></script>
+</body>
+</html>

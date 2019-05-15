@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #F1F1F1;
+    box-sizing: border-box;
+    padding-top: 68px;
+    position: relative;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*头部*/
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*头部按钮一区*/
+.header-one{
+    width: 100%;
+}
+.header-one-ul:after{
+    visibility: hidden;
+    height: 0;
+    display:block ;
+    clear: both;
+    content: '';
+}
+.header-one-ul>li{
+    float: left;
+    margin-left: 20px;
+    /*cursor: pointer;*/
+    padding: 5px 0;
+}
+.header-one-ul>li>span{
+    font:  14px "微软雅黑";
+    color: #333;
+}
+/*.header-one-ul>li>span:hover{*/
+    /*color: #5a7ac7;*/
+    /*text-decoration: underline;*/
+/*}*/
+
+/*头部按钮二区*/
+.header-two{
+    width: 100%;
+    padding: 5px 0;
+}
+.header-two-ul:after{
+    visibility: hidden;
+    height: 0;
+    display:block ;
+    clear: both;
+    content: '';
+}
+
+.header-two-ul>li{
+    float: left;
+    /*cursor: pointer;*/
+    padding: 0 10px;
+}
+.header-two-ul>li:nth-child(1){
+    margin-left: 10px;
+}
+.header-two-ul>li:nth-child(2){
+    border-right: 1px solid #cccccc;
+}
+.header-two-ul>li:nth-child(5){
+    border-right: 1px solid #cccccc;
+}
+.header-two-ul>li:nth-child(6){
+    border-right: 1px solid #cccccc;
+}
+
+.header-two-ul>li>span{
+      font:  14px "微软雅黑";
+      color: #333;
+      vertical-align: middle;
+}
+.header-two-ul>li>img{
+    vertical-align: middle;
+}
+
+/*.header-two-ul>li>span:hover{*/
+    /*color: #5a7ac7;*/
+/*}*/
+
+/*主体*/
+
+section{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 265px;
+    border-top: 1px solid #cccccc;
+}
+/*主体左边*/
+.section-left{
+    border: 1px solid #cccccc;
+    border-top: none;
+    box-sizing: border-box;
+    padding:10px 20px 0 20px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.time-label{
+    vertical-align: middle;
+    font:  14px "微软雅黑";
+    color: #333;
+    cursor: pointer;
+}
+.section-left-top{
+    width: 100%;
+}
+.section-left-top>div{
+    padding: 10px 0;
+    text-align: center;
+}
+.section-left-top>div>button{
+  padding: 5px 20px;
+    background: #5a7ac7;
+    cursor: pointer;
+    font:bold  14px "微软雅黑";
+    color: white;
+    border-radius: 4px ;
+}
+.section-left-top>div>button:hover{
+    color: #5a7ac7;
+    background: white;
+}
+
+.section-leftinput{
+    vertical-align: middle;
+}
+.section-left select{
+    width: 158px;
+    height: 22px;
+    font:  14px "微软雅黑";
+    color: #333;
+    vertical-align: middle;
+}
+
+#Patient{
+    width: 154px;
+    height: 18px;
+    font:  14px "微软雅黑";
+    color: #333;
+
+}
+.table-box{
+    width: 100%;
+    max-height:60vh;
+    overflow: auto;
+
+}
+
+.table-box>table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background: white;
+}
+.table-box>table>thead{
+    background: #B9D9ED;
+}
+.table-box>table>thead th{
+    font: bold 14px "微软雅黑";
+    color: #333;
+    text-align: center;
+    padding:8px 0;
+}
+
+.table-box>table>tbody td{
+    font:14px "微软雅黑";
+    color: #333;
+    text-align: center;
+    padding:5px 0;
+    cursor: pointer;
+}
+
+/*主体右边*/
+.section-right{
+   width: 100%;
+    height: 100%;
+}
+
+.section-right-box{
+    width:80%;
+    margin: auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 64px;
+    position: relative;
+}
+/*主体右边信息表*/
+.section-right-box-biao{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding:0 20px;
+    border:1px solid black;
+    position: relative;
+    padding-bottom: 77px;
+}
+.biao-IfPass{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
+.IfPass-no{
+    cursor: pointer;
+}
+.biao-title{
+    width: 100%;
+    text-align: center;
+    font: 20px "微软雅黑";
+    color: #333;
+    padding: 15px 0;
+}
+.biao-title>span{
+    font:bold 20px "微软雅黑";
+    color: #333;
+    float: right;
+    border: 1px solid black;
+    padding: 0 15px ;
+}
+.biao-information{
+    width: 100%;
+}
+
+.biao-information>ul{
+    width: 100%;
+}
+.biao-information>ul:after{
+    visibility: hidden;
+    height: 0;
+    display:block ;
+    clear: both;
+    content: '';
+}
+
+.biao-information>ul>li{
+    width: 33.3%;
+    float: left;
+    padding: 3px 0;
+}
+.biao-information>ul>li:nth-child(1),.biao-information>ul>li:nth-child(2),.biao-information>ul>li:nth-child(3){
+    border-bottom: 2px solid black;
+}
+.biao-information>ul>li>span:nth-child(1){
+    font:bold 14px "微软雅黑";
+    color: #333;
+}
+.biao-information>ul>li>span:nth-child(2){
+    font: 14px "微软雅黑";
+    color: #333;
+}
+.biao-clinicalDiagnosis{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 80px;
+    position: relative;
+    margin-top: 3px;
+    margin-bottom:20px;
+}
+.biao-clinicalDiagnosis>span{
+    font:bold 14px "微软雅黑";
+    color: #333;
+    position: absolute;
+    left: 0;
+}
+
+.biao-clinicalDiagnosis>div{
+    width: 100%;
+    word-break: break-all;
+    font:14px "微软雅黑";
+    color: #333;
+}
+
+
+/*表RP区*/
+.biao-RP{
+    width: 100%;
+    border-top: 2px solid black;
+}
+
+.biao-RP-title{
+    width: 100%;
+    font:bold 20px "微软雅黑";
+    color: #333;
+}
+.biao-RP-tableBox{
+    width: 100%;
+    margin-top: 20px;
+    max-height: 48vh;
+    overflow: auto;
+}
+
+
+.biao-RP-tableBox>table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background: white;
+}
+.biao-RP-tableBox>table>thead{
+    background: #B9D9ED;
+}
+.biao-RP-tableBox>table>thead th{
+    font: bold 14px "微软雅黑";
+    color: #333;
+    text-align: center;
+    padding:8px 0;
+}
+
+.biao-RP-tableBox>table>tbody td{
+    font:14px "微软雅黑";
+    color: #333;
+    text-align: center;
+    padding:5px 0;
+}
+
+/*表底部*/
+.biao-bottom{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background: #F1F1F1;
+}
+.biao-information-botm{
+    width: 100%;
+    border-top: 1px solid black;
+}
+.biao-information-botm>ul>li:nth-child(1),.biao-information-botm>ul>li:nth-child(2),.biao-information-botm>ul>li:nth-child(3){
+    border-bottom: none;
+}
+
+/*主体右侧底部*/
+.section-right-box-bottom{
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    background: #F1F1F1;
+}
+.section-right-box-bottom>label{
+    font:14px "微软雅黑";
+    color: #333;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.section-right-box-bottom>select{
+    width: 80px;
+    height: 22px;
+    vertical-align: middle;
+    font:14px "微软雅黑";
+    color: #333;
+}
+.section-right-box-bottom>button{
+    font:14px "微软雅黑";
+    color: #333;
+    width: 80px;
+    text-align: center;
+    float: right;
+    cursor: pointer;
+    background: #2DADFF;
+}
+
+
+/*小提示窗口-------------------------------------------------------*/
+.tipAlert{
+    width: 20vw;
+    height: 15vh;
+    border: 1px solid #CCCCCC;
+    position: fixed;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    border-radius: 4px;
+    background: white;
+    display: none;
+}
+.tipHeader{
+    height: 30%;
+    background: #CCCCCC;
+    position: relative;
+}
+.tipHeader>div{
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: black;
+    font:  16px "Microsoft Yahei";
+}
+.tipBody{
+    margin-top: 15px;
+}
+.tipBody>div{
+    width: 80%;
+    margin: auto;
+    word-break: break-all;
+}
+.tipBody>div>img{
+    vertical-align: middle;
+}
+.tipBody>div>span{
+    margin-left: 1rem;
+    vertical-align: middle;
+    font: 14px "Microsoft Yahei";
+    color: #FF6600;
+}
+
+
+/*尾部*/
+footer{
+    width: 100%;
+}
+
+#cancelBtn{
+    border: 1px solid rgb(45, 173, 255);
+    color:rgb(45, 173, 255);
+    background: white;
+    margin-right: 30px;
+    margin-top: 1px;
+}
+
+/*未通过结果窗口*/
+.alertBox{
+    border: 1px solid #797979;
+    position:fixed;
+    background-color:white ;
+    display: none;
+    transition: all;
+    -webkit-transition: all;
+    min-height: 550px;
+}
+
+.ReviewResults-Box{
+    width: 60%;
+    height: 60vh;
+    left: 20%;
+    top: 25%;
+    border:1px solid #cccccc;
+    overflow: hidden;
+    min-height: 585px;
+}
+.ReviewResults-Box>iframe{
+    width:100%;
+    height:99%;
+    overflow: auto;
+}
+.ReviewResults-Box-header{
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    background: #3DA9E7;
+    top: 0;
+    left: 0;
+}
+.ReviewResults-Box-header:hover{
+    cursor: move;
+}
+.rbh-box{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+.rbh-box>div:nth-child(1){
+    margin-top: 12px;
+}
+.rbh-box>div:nth-child(1)>span{
+    color: white;
+    font: bold 14px "Microsoft Yahei";
+}
+.rbh-box>div:nth-child(2){
+    position:absolute ;
+    right: 0;
+    top: 5px;
+}
+.rbh-box>div:nth-child(2):after{
+    content: '';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+.rbh-box>div:nth-child(2)>img{
+    float: right;
+    margin-right: 15px;
+}
+.rbh-box>div:nth-child(2)>img:nth-child(1){
+    float: right;
+    margin-right: 0;
+}
+
+
